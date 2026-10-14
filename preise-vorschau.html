@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entwurf: Preissektion – Für Personaler*innen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Design-Tokens aus shared/config.js – hier fest eingebaut, damit die Datei allein lauffaehig ist -->
+  <script>
+    /* DEIN ERSTER TAG – zentrale Tailwind-Konfiguration (Design-Tokens).
+       Wird auf jeder Seite direkt nach dem Tailwind-CDN-Script eingebunden. */
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto', 'sans-serif'] },
+          colors: {
+            brand: '#00afd6',   // DET Blau – CTAs, Links, Overlines, Footer
+            yellow: '#ffec5c',  // DET Gelb – CTA-Karten, Award-Badge
+            dark: '#181818',    // Text, Headlines
+            light: '#fafafa',   // Seitenhintergrund
+            paper: '#f4f4f2',   // alternierender Sektionshintergrund, Karten
+            mist: '#f0f0f0',    // Icon-Boxen, Chips
+            line: '#e3e3e3',    // alle Trennlinien & Rahmen
+            muted: '#a9a9a9',   // sekundärer/abgedunkelter Text
+            night: '#002e38',   // dunkler Hero-Hintergrund
+            slate: '#384a53',   // Breadcrumb-Nav Text
+            cloud: '#f2f2f2',   // Shop-Cross-Sell-Karte Hintergrund
+            skylight: '#f0f8fb', // Info-Banner Hintergrund (z.B. Lieferdatum-Hinweis)
+            station: {
+              blue: '#33b9da',
+              dark: '#2c2d3e',
+              yellow: '#f7cb28',
+              orange: '#f27c50',
+            },
+          },
+          letterSpacing: { tight2: '-0.03em' },
+          fontSize: {
+            // Display-Skala für H1/H2: text-display-xs sm:text-display-sm lg:text-display
+            'display': ['42px', { lineHeight: '53px', letterSpacing: '-0.03em' }],
+            'display-sm': ['34px', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+            'display-xs': ['28px', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* In der Werkstatt sollen die Karten sofort sichtbar sein (keine Scroll-Animation) */
+    .reveal, .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
+  </style>
+</head>
+<body class="font-sans bg-light text-dark">
+
+<div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-6 text-sm text-muted">
+  Entwurf der neuen Preissektion für <strong>Für Personaler*innen</strong> · Stand 12.08.2026 · nur dieser Abschnitt, nicht die ganze Seite
+</div>
+
+<!-- ════════ AB HIER: ÜBERGABE-CODE AN DEN PROGRAMMIERER ════════ -->
+
+<!-- ═══════════════════════════════════════
+     DIE KOSTEN – PRICING
+═══════════════════════════════════════ -->
+<section class="bg-brand py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[679px] mb-12 lg:mb-16 reveal">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-[#fafafa] font-normal mb-8">
+        Unsere Preise
+      </h2>
+      <p class="text-white text-xl leading-[30px]">
+        Sie wählen das Paket, das zu Ihrem Lieblingsmedium und Ihrem Budget passt. Alle Preise sind bei uns transparent und klar.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+
+      <!-- Karte 1: Sprachnachricht & Mini-Games -->
+      <div class="bg-cloud rounded-2xl flex flex-col gap-[26px] relative reveal delay-100">
+        <div class="flex flex-col gap-2 pt-6 px-8 text-slate leading-[1.25] tracking-tight2 xl:min-h-[164px] 2xl:min-h-[176px]">
+          <!-- Badge-Zeile (Platzhalter-Höhe auch ohne Badge, damit alle Karten bündig starten) -->
+          <div class="h-7 flex items-start">
+            <span class="bg-yellow text-black text-sm font-bold px-2.5 py-1 rounded-lg">NEU</span>
+          </div>
+          <h3 class="text-[26px] 2xl:text-[30px] font-medium">Sprachnachricht &amp; Mini-Games</h3>
+          <p class="text-[22px]">inkl. Schulprogramm</p>
+        </div>
+        <div class="flex flex-col gap-6 px-8 pb-6">
+          <div class="min-h-[62px]">
+            <p class="text-2xl font-bold text-dark leading-relaxed">ab 3.000 EUR</p>
+            <p class="text-xs text-[#52646d] leading-relaxed">ab dem 2. Jahr: jährlich ab 3.000 EUR</p>
+          </div>
+          <a href="beratungsgespraech.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-brand text-white h-12 px-4 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full group">
+            Unverbindlich anfragen
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Medienbox in der Schule</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karte 2: AR-Avatar -->
+      <div class="bg-cloud rounded-2xl flex flex-col gap-[26px] relative reveal delay-200">
+        <div class="flex flex-col gap-2 pt-6 px-8 text-slate leading-[1.25] tracking-tight2 xl:min-h-[164px] 2xl:min-h-[176px]">
+          <div class="h-7 flex items-start">
+            <span class="bg-yellow text-black text-sm font-bold px-2.5 py-1 rounded-lg">NEU</span>
+          </div>
+          <h3 class="text-[26px] 2xl:text-[30px] font-medium">AR-Avatar</h3>
+          <p class="text-[22px]">inkl. Schulprogramm</p>
+        </div>
+        <div class="flex flex-col gap-6 px-8 pb-6">
+          <div class="min-h-[62px]">
+            <p class="text-2xl font-bold text-dark leading-relaxed">ab 4.500 EUR</p>
+            <p class="text-xs text-[#52646d] leading-relaxed">ab dem 2. Jahr: jährlich ab 3.000 EUR</p>
+          </div>
+          <a href="beratungsgespraech.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-brand text-white h-12 px-4 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full group">
+            Unverbindlich anfragen
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Medienbox in der Schule</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Eigene Nutzungsrechte während Laufzeit</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karte 3: #kurzerklärt-Video -->
+      <div class="bg-cloud rounded-2xl flex flex-col gap-[26px] relative reveal delay-300">
+        <div class="flex flex-col gap-2 pt-6 px-8 text-slate leading-[1.25] tracking-tight2 xl:min-h-[164px] 2xl:min-h-[176px]">
+          <div class="h-7 hidden xl:flex items-start"></div>
+          <h3 class="text-[26px] 2xl:text-[30px] font-medium">#kurzerklärt-Video</h3>
+          <p class="text-[22px]">inkl. Schulprogramm</p>
+        </div>
+        <div class="flex flex-col gap-6 px-8 pb-6">
+          <div class="min-h-[62px]">
+            <p class="text-2xl font-bold text-dark leading-relaxed">ab 9.400 EUR</p>
+            <p class="text-xs text-[#52646d] leading-relaxed">ab dem 2. Jahr: jährlich ab 4.500 EUR</p>
+          </div>
+          <a href="beratungsgespraech.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-brand text-white h-12 px-4 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full group">
+            Unverbindlich anfragen
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Medienbox in der Schule</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Videostunde in der Schule</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Unbefristete Nutzungsrechte</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Veröffentlichung auf unserem YouTube-Kanal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karte 4: 360°-Rundgang -->
+      <div class="bg-cloud rounded-2xl flex flex-col gap-[26px] relative reveal delay-400">
+        <div class="flex flex-col gap-2 pt-6 px-8 text-slate leading-[1.25] tracking-tight2 xl:min-h-[164px] 2xl:min-h-[176px]">
+          <div class="h-7 hidden xl:flex items-start"></div>
+          <h3 class="text-[26px] 2xl:text-[30px] font-medium">360°-Rundgang</h3>
+          <p class="text-[22px]">inkl. Schulprogramm</p>
+        </div>
+        <div class="flex flex-col gap-6 px-8 pb-6">
+          <div class="min-h-[62px]">
+            <p class="text-2xl font-bold text-dark leading-relaxed">ab 19.400 EUR</p>
+            <p class="text-xs text-[#52646d] leading-relaxed">ab dem 2. Jahr: jährlich ab 4.500 EUR</p>
+          </div>
+          <a href="beratungsgespraech.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-brand text-white h-12 px-4 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full group">
+            Unverbindlich anfragen
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Medienbox in der Schule</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Videostunde in der Schule</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Unbefristete Nutzungsrechte</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg class="w-6 h-6 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 4.5-4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-[15px] leading-relaxed text-dark">Veröffentlichung auf unserem YouTube-Kanal</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Netto-Hinweis: einmal linksbündig unter allen Säulen -->
+    <p class="text-white text-[15px] leading-relaxed mt-8 lg:mt-12 reveal">
+      Alle Preise verstehen sich netto zzgl. der gesetzlichen Mehrwertsteuer.
+    </p>
+  </div>
+</section>
+
+<!-- ════════ ENDE ÜBERGABE-CODE ════════ -->
+
+</body>
+</html>
