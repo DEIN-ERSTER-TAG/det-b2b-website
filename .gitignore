@@ -3,3 +3,4 @@ Logins.env
 .vercel
 node_modules
 __MACOSX
+*.env
