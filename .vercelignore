@@ -1,0 +1,6 @@
+*.env
+.claude
+.git
+component-library
+download_assets.py
+*.md
